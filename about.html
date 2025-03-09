@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí - Portfolio Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1E1E1E;
+            --secondary-color: #007AFF;
+            --accent-color: #0055FF;
+            --background-color: #F8F9FC;
+            --surface-color: #FFFFFF;
+            --text-primary: #1E1E1E;
+            --text-secondary: #6B7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            background-image:
+                radial-gradient(circle at 100% 0%, rgba(0, 122, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 0% 100%, rgba(0, 85, 255, 0.03) 0%, transparent 50%);
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 1.2rem;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            gap: 3rem;
+            padding: 0 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 140px 2rem 4rem;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 60px;
+        }
+
+        .profile-section {
+            position: sticky;
+            top: 100px;
+        }
+
+        .profile-card {
+            background: var(--surface-color);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow:
+                0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06),
+                0 20px 25px -5px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .profile-image-container {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-status {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #007AFF, #0055FF);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .profile-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .profile-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .profile-link {
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .primary-link {
+            background: linear-gradient(135deg, #007AFF, #0055FF);
+            color: white;
+        }
+
+        .secondary-link {
+            background: var(--background-color);
+            color: var(--text-primary);
+        }
+
+        .bio-section {
+            background: var(--surface-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow:
+                0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #007AFF, #0055FF);
+            border-radius: 3px;
+        }
+
+        .bio-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .skills-section {
+            margin-top: 3rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: var(--background-color);
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #007AFF, #0055FF);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-level {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 1024px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-section {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Chat</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="about-container">
+        <aside class="profile-section">
+            <div class="profile-card">
+                <div class="profile-image-container">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80"
+                        alt="Foto de perfil profesional" class="profile-image">
+                    <div class="profile-status">Disponible para proyectos</div>
+                </div>
+                <div class="profile-info">
+                    <h2>Daniel García</h2>
+                    <p>Desarrollador Full Stack & Diseñador UI/UX</p>
+                    <div class="profile-links">
+                        <a href="#" class="profile-link primary-link">Descargar CV</a>
+                        <a href="#" class="profile-link secondary-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="bio-section">
+            <h1 class="section-title">Sobre mí</h1>
+            <div class="bio-content">
+                <p>Con más de 5 años de experiencia en desarrollo web, me especializo en crear soluciones digitales
+                    elegantes y eficientes. Mi enfoque combina diseño intuitivo con código limpio y optimizado.</p>
+                <br>
+                <p>Actualmente trabajo en proyectos que impactan a miles de usuarios, siempre buscando la mejor
+                    experiencia de usuario y rendimiento.</p>
+            </div>
+
+            <div class="skills-section">
+                <h2 class="section-title">Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-name">Desarrollo Frontend</h3>
+                        <p class="skill-level">Avanzado</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-name">Backend</h3>
+                        <p class="skill-level">Intermedio</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-name">Diseño UI/UX</h3>
+                        <p class="skill-level">Avanzado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Portfolio Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1E1E1E;
+            --secondary-color: #007AFF;
+            --accent-color: #0055FF;
+            --background-color: #F8F9FC;
+            --surface-color: #FFFFFF;
+            --text-primary: #1E1E1E;
+            --text-secondary: #6B7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            background-image:
+                radial-gradient(circle at 100% 0%, rgba(0, 122, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 0% 100%, rgba(0, 85, 255, 0.03) 0%, transparent 50%);
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 1.2rem;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            gap: 3rem;
+            padding: 0 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 140px 2rem 4rem;
+        }
+
+        .header-section {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #007AFF, #0055FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--surface-color);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow:
+                0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            padding: 0.4rem 1rem;
+            background: var(--background-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link.primary {
+            background: linear-gradient(135deg, #007AFF, #0055FF);
+            color: white;
+        }
+
+        .project-link.secondary {
+            background: var(--background-color);
+            color: var(--text-primary);
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 2rem;
+            padding: 1.5rem 2rem;
+            background: var(--background-color);
+            margin-top: 1.5rem;
+            border-radius: 16px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Chat</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="projects-container">
+        <div class="header-section">
+            <h1 class="section-title">Mis Proyectos</h1>
+            <p class="section-subtitle">Una selección de mis trabajos más recientes en desarrollo web y diseño de
+                aplicaciones.</p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Proyecto 1 -->
+            <article class="project-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80"
+                    alt="Dashboard Analytics" class="project-image">
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">MongoDB</span>
+                    </div>
+                    <h3 class="project-title">Dashboard Analytics</h3>
+                    <p class="project-description">
+                        Panel de control analítico con visualización de datos en tiempo real, integración de API y
+                        reportes personalizados.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">4.9/5</span>
+                            <span class="stat-label">Valoración</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">10k+</span>
+                            <span class="stat-label">Usuarios</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">99.9%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary">
+                            Ver Demo
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                        <a href="#" class="project-link secondary">
+                            Código
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Proyecto 2 -->
+            <article class="project-card">
+                <img src="https://images.unsplash.com/photo-1555421689-491a97ff2040?w=500&q=80" alt="E-commerce App"
+                    class="project-image">
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Vue.js</span>
+                        <span class="project-tag">Firebase</span>
+                        <span class="project-tag">Stripe</span>
+                    </div>
+                    <h3 class="project-title">E-commerce App</h3>
+                    <p class="project-description">
+                        Plataforma de comercio electrónico con gestión de inventario, pagos en línea y panel de
+                        administración.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">15k+</span>
+                            <span class="stat-label">Ventas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">4.8/5</span>
+                            <span class="stat-label">Valoración</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">98%</span>
+                            <span class="stat-label">Satisfacción</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary">
+                            Ver Demo
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                        <a href="#" class="project-link secondary">
+                            Código
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+</body>
+
+</html>
