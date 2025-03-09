@@ -25,12 +25,12 @@ El proyecto se compone de los siguientes archivos:
    git clone https://github.com/BrianGuadalupe/personalwebpage.git
 
 2. Abre el archivo index.html en un navegador:
- Funcionalidades
+- Funcionalidades
 - ✅ Diseño moderno y responsive.
 - ✅ Secciones organizadas para navegación clara.
 - ✅ Formulario de contacto interactivo.
 
-📬 Contacto
+📬 Contacto:
 Si deseas ponerte en contacto, puedes hacerlo a través de la sección de Contacto en la web o por email.
 
 Autor: Brian Guadalupe
