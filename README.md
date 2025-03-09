@@ -1,8 +1,8 @@
-# 📌 Personal Web Page
+#  Personal Web Page
 
 Este es un proyecto de **página web personal** diseñado para mostrar información profesional, proyectos y una forma de contacto. La web cuenta con una interfaz moderna y accesible.
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 El proyecto se compone de los siguientes archivos:
 
@@ -12,23 +12,23 @@ El proyecto se compone de los siguientes archivos:
 - `contact.html` → Formulario de contacto y redes sociales.
 - `styles.css` → Archivo de estilos para el diseño de la web.
 
-## 🚀 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **HTML5** → Para la estructura de la página.
 - **CSS3** → Para los estilos y diseño responsivo.
 - **JavaScript (opcional)** → Para mejorar la interactividad.
 
-## 🔧 Cómo Ejecutar el Proyecto
+## Cómo Ejecutar el Proyecto
 
 1. Clona este repositorio en tu máquina local:
    ```bash
    git clone https://github.com/BrianGuadalupe/personalwebpage.git
 
-2. Abre el archivo index.html en un navegador.
-✨ Funcionalidades
-✅ Diseño moderno y responsive.
-✅ Secciones organizadas para navegación clara.
-✅ Formulario de contacto interactivo.
+2. Abre el archivo index.html en un navegador:
+ Funcionalidades
+- ✅ Diseño moderno y responsive.
+- ✅ Secciones organizadas para navegación clara.
+- ✅ Formulario de contacto interactivo.
 
 📬 Contacto
 Si deseas ponerte en contacto, puedes hacerlo a través de la sección de Contacto en la web o por email.
